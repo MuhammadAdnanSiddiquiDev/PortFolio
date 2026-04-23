@@ -1,6 +1,21 @@
-.DS_Store
+# dependencies
 node_modules
-.env
+
+# next.js
 .next
-dist
+out
+
+# production
 build
+dist
+
+# env
+.env
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# mac
+.DS_Store
