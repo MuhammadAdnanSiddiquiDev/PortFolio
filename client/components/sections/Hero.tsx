@@ -58,6 +58,35 @@ const fadeUp = (delay = 0) => ({
 
 
 const Hero = () => {
+    const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    targetId: string,
+    pathName: string
+  ) => {
+    e.preventDefault(); 
+    
+
+    if (targetId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.pushState(null, "", "/");
+      return;
+    }
+
+    const target = document.getElementById(targetId);
+    if (target) {
+      // Navbar ki height (10vh) minus karna taaki section peeche na chhupe
+      const navHeight = window.innerHeight * 0.1; 
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+      
+      // URL ko update karna bina page load kiye aur bina '#' ke
+      window.history.pushState(null, "", pathName);
+    }
+  };
   return (
     <section className="min-h-screen w-full bg-black text-white flex flex-col items-center justify-center px-6 text-center">
       <motion.p
@@ -96,6 +125,7 @@ const Hero = () => {
       >
         <Link
           href="/projects"
+           onClick={(e) => handleScroll(e, "projects", "/projects")}
           className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-full transition-colors duration-200"
         >
           View Projects
