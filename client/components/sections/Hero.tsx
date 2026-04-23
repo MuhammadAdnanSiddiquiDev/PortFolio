@@ -132,6 +132,7 @@ const Hero = () => {
         </Link>
         <Link
           href="/contact"
+           onClick={(e) => handleScroll(e, "contact", "/contact")}
           className="px-6 py-3 border border-zinc-600 hover:border-emerald-500 hover:text-emerald-500 rounded-full transition-colors duration-200"
         >
           Contact Me
