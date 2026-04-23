@@ -43,8 +43,7 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 w-full h-[10vh] px-6 flex items-center justify-between md:px-[20%] bg-black text-white z-[90000]">
         <h3 className="font-semibold text-lg relative z-[90001]">
-          <span className="text-emerald-500 font-bold">M </span>
-          Adnan
+          <span className="text-emerald-500 font-bold">M</span>AdnanSiddiqui
           <span className="text-emerald-500 font-bold">.dev</span>
         </h3>
 
